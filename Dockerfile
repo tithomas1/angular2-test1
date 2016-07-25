@@ -2,6 +2,7 @@ FROM node:4.4.4-slim
 
 WORKDIR /app
 
+# Initial seed files for NPM install
 ADD ./package.json /app/package.json
 ADD ./typings.json /app/typings.json
 
@@ -10,7 +11,7 @@ ADD ./.typingsrc /app/.typingsrc
 
 RUN npm config set proxy http://proxy.esl.cisco.com:8080 && npm config set https-proxy http://proxy.esl.cisco.com:8080
 
-# Install dependencies
+# Install dependencies - is the typings install redundant here?
 RUN npm install --unsafe-perm=true && npm install -g typings
 
 # Add the rest of the sources
