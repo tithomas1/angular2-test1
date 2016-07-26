@@ -1,6 +1,7 @@
 {
   "name": "angular2-base",
-  "version": "1.0.0",
+  "version": "1.0.0"
+  "private": true,
   "scripts": {
     "start": "tsc && npm run lite",
     "lite": "lite-server",
